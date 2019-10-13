@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CapstoneFinal
 //
-//  Created by Faith Duval on 10/13/19.
+//  Created by Ryan Duval on 10/13/19.
 //  Copyright © 2019 Ryan Duval. All rights reserved.
 //
 
