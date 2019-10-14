@@ -191,8 +191,10 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Analytics
+  - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Firestore
   - FirebaseUI
 
 SPEC REPOS:
@@ -256,6 +258,6 @@ SPEC CHECKSUMS:
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
 
-PODFILE CHECKSUM: 3353f6044eaab2f3c2dcd8175bb40eaf9c869243
+PODFILE CHECKSUM: 793b309a6472049eca986c4140071b4b4df1439e
 
 COCOAPODS: 1.7.5
