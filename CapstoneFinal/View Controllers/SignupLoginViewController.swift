@@ -45,7 +45,7 @@ class SignupLoginViewController: UIViewController {
         
         //style elements
         Utilities.styleFilledButton(signUpButton)
-        Utilities.styleHollowButton(loginButton)
+        Utilities.styleFilledButton(loginButton)
 
 
     }

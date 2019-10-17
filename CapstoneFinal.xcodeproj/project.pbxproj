@@ -17,11 +17,11 @@
 		1643B7392353C5C200B57A69 /* sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1643B7382353C5C200B57A69 /* sound.caf */; };
 		1643B7432353D78E00B57A69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B7422353D78E00B57A69 /* SignUpViewController.swift */; };
 		1643B7452353D7A300B57A69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B7442353D7A300B57A69 /* LoginViewController.swift */; };
-		1643B7472353D7B300B57A69 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B7462353D7B300B57A69 /* HomeViewController.swift */; };
 		1643B7492353D82800B57A69 /* SignupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B7482353D82800B57A69 /* SignupLoginViewController.swift */; };
 		1643B74B2353E44D00B57A69 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B74A2353E44D00B57A69 /* Utilities.swift */; };
 		1643B74E2353FD7D00B57A69 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B74D2353FD7D00B57A69 /* Constants.swift */; };
 		1643B750235409EA00B57A69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1643B74F235409EA00B57A69 /* GoogleService-Info.plist */; };
+		1643B75223540D6800B57A69 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B75123540D6800B57A69 /* HomeViewController.swift */; };
 		AF5149F42BD71AD9513EF997 /* Pods_CapstoneFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958167658865258A6688325E /* Pods_CapstoneFinal.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,14 +36,13 @@
 		1643B7302353C54500B57A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1643B7362353C5B700B57A69 /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Image; sourceTree = "<group>"; };
 		1643B7382353C5C200B57A69 /* sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.caf; sourceTree = "<group>"; };
-		1643B73E2353CF2C00B57A69 /* MyMedicalAlarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyMedicalAlarm.png; sourceTree = "<group>"; };
 		1643B7422353D78E00B57A69 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1643B7442353D7A300B57A69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1643B7462353D7B300B57A69 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1643B7482353D82800B57A69 /* SignupLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupLoginViewController.swift; sourceTree = "<group>"; };
 		1643B74A2353E44D00B57A69 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1643B74D2353FD7D00B57A69 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1643B74F235409EA00B57A69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1643B75123540D6800B57A69 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		27814E15E6D0425B3738956D /* Pods-CapstoneFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneFinal.release.xcconfig"; path = "Target Support Files/Pods-CapstoneFinal/Pods-CapstoneFinal.release.xcconfig"; sourceTree = "<group>"; };
 		7443641666AD19E962BF5A90 /* Pods-CapstoneFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneFinal.debug.xcconfig"; path = "Target Support Files/Pods-CapstoneFinal/Pods-CapstoneFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		958167658865258A6688325E /* Pods_CapstoneFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +94,8 @@
 				1643B74C2353E46400B57A69 /* Helpers */,
 				1643B7412353D75100B57A69 /* View Controllers */,
 				1643B7282353C54400B57A69 /* Main.storyboard */,
-				1643B74F235409EA00B57A69 /* GoogleService-Info.plist */,
 				1643B72B2353C54500B57A69 /* Assets.xcassets */,
-				1643B73E2353CF2C00B57A69 /* MyMedicalAlarm.png */,
+				1643B74F235409EA00B57A69 /* GoogleService-Info.plist */,
 				1643B7362353C5B700B57A69 /* Image */,
 				1643B72D2353C54500B57A69 /* LaunchScreen.storyboard */,
 				1643B7302353C54500B57A69 /* Info.plist */,
@@ -112,8 +110,8 @@
 				1643B7262353C54400B57A69 /* ViewController.swift */,
 				1643B7482353D82800B57A69 /* SignupLoginViewController.swift */,
 				1643B7422353D78E00B57A69 /* SignUpViewController.swift */,
-				1643B7462353D7B300B57A69 /* HomeViewController.swift */,
 				1643B7442353D7A300B57A69 /* LoginViewController.swift */,
+				1643B75123540D6800B57A69 /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -277,9 +275,9 @@
 				1643B7432353D78E00B57A69 /* SignUpViewController.swift in Sources */,
 				1643B7492353D82800B57A69 /* SignupLoginViewController.swift in Sources */,
 				1643B7452353D7A300B57A69 /* LoginViewController.swift in Sources */,
+				1643B75223540D6800B57A69 /* HomeViewController.swift in Sources */,
 				1643B7252353C54400B57A69 /* SceneDelegate.swift in Sources */,
 				1643B74B2353E44D00B57A69 /* Utilities.swift in Sources */,
-				1643B7472353D7B300B57A69 /* HomeViewController.swift in Sources */,
 				1643B74E2353FD7D00B57A69 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

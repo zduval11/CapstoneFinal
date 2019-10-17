@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -55,6 +56,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
+        
 
 
 
@@ -119,14 +121,17 @@ class SignUpViewController: UIViewController {
         
         // Create the user
         Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-            
+        
             // Check for errors
+           
+            
             if err != nil {
                 
                 // There was an error creating the user
                 self.showError("Error creating user")
             }
-            else {
+            
+            if err == nil {
                 
                 // User was created successfully, now store the first name and last name
                 let db = Firestore.firestore()
