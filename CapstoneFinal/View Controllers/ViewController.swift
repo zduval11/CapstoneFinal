@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class ViewController: UIViewController {
 
@@ -14,10 +16,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         datePicker.datePickerMode = UIDatePicker.Mode.time
+    
+    let db = Firestore.firestore()
+    
+        db.collection("Synthroid Alarm").addDocument(data: ["AlarmName": [title]])
+    
+    
     }
 
-    
-    
     
     
     
@@ -25,6 +31,7 @@ class ViewController: UIViewController {
     func scheduleNotification(_ fireDate: UIDatePicker) {
            let content = UNMutableNotificationContent()
            content.title = "TAKE YO MEDS!"
+           var title:String = content.title
            content.body = "Synthroid 10 mg!"
            content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "sound.caf"))
            
@@ -82,4 +89,5 @@ class ViewController: UIViewController {
 
 
 }
+
 
