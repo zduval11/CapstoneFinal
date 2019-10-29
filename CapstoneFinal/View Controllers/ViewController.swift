@@ -12,26 +12,27 @@ import FirebaseFirestore
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        datePicker.datePickerMode = UIDatePicker.Mode.time
-    
-    let db = Firestore.firestore()
-    
-        db.collection("Synthroid Alarm").addDocument(data: ["AlarmName": [title]])
-    
-    
-    }
-
+      override func viewDidLoad() {
+          super.viewDidLoad()
+          // Do any additional setup after loading the view.
+          datePicker.datePickerMode = UIDatePicker.Mode.time
+      
+      //let db = Firestore.firestore()
+      
+    //db.collection("Synthroid Alarm").addDocument(data: ["AlarmName": [age]])
+      
+      }
     
     
     
     
     func scheduleNotification(_ fireDate: UIDatePicker) {
+        
+           let db = Firestore.firestore()
            let content = UNMutableNotificationContent()
-           content.title = "TAKE YO MEDS!"
-           var title:String = content.title
+           let age:String = "TAKE YO MEDS"
+           content.title = age
+           db.collection("Test Alarm").addDocument(data: ["AlarmName": [age]])
            content.body = "Synthroid 10 mg!"
            content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "sound.caf"))
            
@@ -59,6 +60,8 @@ class ViewController: UIViewController {
                }
            }
            
+                
+          
            
        }
 
@@ -86,8 +89,7 @@ class ViewController: UIViewController {
         NSLog ("Alarm Cancel button tapped");
     }
     
-
-
+   
 }
 
 
