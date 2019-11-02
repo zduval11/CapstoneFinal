@@ -15,12 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gb2-4A-U6R">
-                                <rect key="frame" x="0.0" y="323" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="td9-dU-AZc">
-                                <rect key="frame" x="153" y="574" width="109" height="38"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -32,11 +28,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-s5-DGw">
-                                <rect key="frame" x="153" y="659" width="109" height="36"/>
+                                <rect key="frame" x="153" y="716" width="109" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Delete Alarm">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
@@ -44,16 +40,52 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="fCo-KK-wrt">
-                                <rect key="frame" x="87" y="95" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gb2-4A-U6R">
+                                <rect key="frame" x="0.0" y="340" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stU-DG-Hj9">
+                                <rect key="frame" x="39" y="40" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Medication Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ET-P0-gDB">
+                                <rect key="frame" x="159" y="156" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount Taken" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8U-GY-s7Q">
+                                <rect key="frame" x="159" y="198" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idG-wN-MIV">
+                                <rect key="frame" x="171" y="252" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cun-gV-tUY"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIh-EH-8Ac">
+                                <rect key="frame" x="261" y="243" width="47" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="JPC-sU-RvP"/>
                     <connections>
+                        <outlet property="AmountMed" destination="d8U-GY-s7Q" id="Vx8-rx-5fl"/>
+                        <outlet property="MedName" destination="1ET-P0-gDB" id="Vfl-CC-ZQt"/>
                         <outlet property="datePicker" destination="Gb2-4A-U6R" id="BnL-iq-3TG"/>
+                        <outlet property="myImg" destination="WIh-EH-8Ac" id="s2I-gr-S2E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,19 +100,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="UZq-6g-iXa">
-                                <rect key="frame" x="87" y="106" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="UZq-6g-iXa">
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hP2-gp-qix">
+                                <rect key="frame" x="118" y="156" width="178" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Medication Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3n-Zk-ZBr">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount Taken" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vPZ-gG-T1C">
+                                        <rect key="frame" x="0.0" y="46" width="178" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MO1-JZ-LXr">
+                                <rect key="frame" x="152" y="244" width="110" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <state key="normal" title="Add Photo"/>
+                            </button>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qMm-bx-twK">
+                                <rect key="frame" x="-2" y="289" width="419" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="vgX-Fp-yX8"/>
+                                </constraints>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjZ-8E-a0A">
+                                <rect key="frame" x="174" y="696" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Set Alarm"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvJ-Nk-Ft9">
+                                <rect key="frame" x="163" y="748" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete Alarm"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwf-fL-tSv">
+                                <rect key="frame" x="39" y="38" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hP2-gp-qix" firstAttribute="leading" secondItem="Ru8-c7-yY6" secondAttribute="leading" constant="118" id="29z-q4-d5a"/>
+                            <constraint firstItem="UZq-6g-iXa" firstAttribute="centerX" secondItem="hP2-gp-qix" secondAttribute="centerX" id="8Yx-Yv-YXs"/>
+                            <constraint firstItem="MO1-JZ-LXr" firstAttribute="centerX" secondItem="qMm-bx-twK" secondAttribute="centerX" id="9KD-E2-Sl3"/>
+                            <constraint firstItem="UZq-6g-iXa" firstAttribute="top" secondItem="Ru8-c7-yY6" secondAttribute="top" constant="20" id="KNz-YA-Ipj"/>
+                            <constraint firstItem="qMm-bx-twK" firstAttribute="top" secondItem="MO1-JZ-LXr" secondAttribute="bottom" constant="15" id="Y4C-cp-ugU"/>
+                            <constraint firstItem="hP2-gp-qix" firstAttribute="centerX" secondItem="paD-N6-hcw" secondAttribute="centerX" id="aYN-MP-jhM"/>
+                            <constraint firstItem="MO1-JZ-LXr" firstAttribute="leading" secondItem="Ru8-c7-yY6" secondAttribute="leading" constant="152" id="abZ-x3-o6P"/>
+                            <constraint firstItem="MO1-JZ-LXr" firstAttribute="top" secondItem="hP2-gp-qix" secondAttribute="bottom" constant="8" id="diU-2i-TwT"/>
+                            <constraint firstItem="MO1-JZ-LXr" firstAttribute="centerX" secondItem="hP2-gp-qix" secondAttribute="centerX" id="glm-Ty-Z4M"/>
+                            <constraint firstItem="UZq-6g-iXa" firstAttribute="leading" secondItem="Ru8-c7-yY6" secondAttribute="leading" constant="87" id="iMz-Nh-9lv"/>
+                            <constraint firstItem="hP2-gp-qix" firstAttribute="top" secondItem="paD-N6-hcw" secondAttribute="top" constant="156" id="nN7-vC-TLs"/>
+                            <constraint firstItem="hP2-gp-qix" firstAttribute="top" secondItem="UZq-6g-iXa" secondAttribute="bottom" constant="8" id="qX3-yd-X1i"/>
+                            <constraint firstItem="qMm-bx-twK" firstAttribute="leading" secondItem="paD-N6-hcw" secondAttribute="leadingMargin" constant="-22" id="rbf-JV-4JQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ru8-c7-yY6"/>
                     </view>
                     <navigationItem key="navigationItem" id="T7n-mE-Ofw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebp-UA-BdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="809"/>
+            <point key="canvasLocation" x="63.768115942028992" y="808.92857142857144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tBa-Vp-sas">
@@ -91,11 +178,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="fEn-Ge-hI6">
-                                <rect key="frame" x="87" y="106" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fth-VL-hwl"/>
                     </view>
                     <navigationItem key="navigationItem" id="r8F-pc-7c4"/>
@@ -113,11 +200,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="gho-h8-pbc">
-                                <rect key="frame" x="87" y="116" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="MkO-VK-Gh1"/>
                     </view>
                     <navigationItem key="navigationItem" id="IPs-RA-ell"/>
@@ -135,11 +222,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="pgM-SY-q89">
-                                <rect key="frame" x="87" y="125" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="n21-f1-gou"/>
                     </view>
                     <navigationItem key="navigationItem" id="sR9-hz-Gbv"/>
@@ -157,11 +244,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="yBp-1V-e8W">
-                                <rect key="frame" x="87" y="113" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="7S9-4v-GsU"/>
                     </view>
                     <navigationItem key="navigationItem" id="HSw-aI-Ksq"/>
@@ -179,11 +266,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="cPV-Fe-drN">
-                                <rect key="frame" x="87" y="123" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="u3w-sL-adi"/>
                     </view>
                     <navigationItem key="navigationItem" id="GSf-7P-ag3"/>
@@ -201,11 +288,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="DpQ-Wb-FAx">
-                                <rect key="frame" x="87" y="138" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2uJ-4w-yIm"/>
                     </view>
                     <navigationItem key="navigationItem" id="iGU-bi-iMY"/>
@@ -223,11 +310,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-Rw-CWW">
-                                <rect key="frame" x="87" y="115" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="1Ns-mu-uQC"/>
                     </view>
                     <navigationItem key="navigationItem" id="Efg-J0-QxT"/>
@@ -245,11 +332,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="xga-QH-DcZ">
-                                <rect key="frame" x="87" y="106" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fgl-Wh-7Zx"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q8Y-bP-TEA"/>
@@ -267,11 +354,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="KFK-fC-Grt">
-                                <rect key="frame" x="87" y="94" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="DxY-Bb-XCQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="GaG-1X-juR"/>
@@ -289,11 +376,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyMedicalAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="Qkb-Tc-ABP">
-                                <rect key="frame" x="87" y="106" width="240" height="128"/>
+                                <rect key="frame" x="87" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="xCo-EV-z5r"/>
                     </view>
                     <navigationItem key="navigationItem" id="H9I-Ux-n74"/>
@@ -340,7 +427,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XqI-6J-wHv" firstAttribute="bottom" secondItem="aVc-Ic-ecH" secondAttribute="bottom" constant="40" id="5J7-fg-In1"/>
                             <constraint firstItem="XqI-6J-wHv" firstAttribute="trailing" secondItem="aVc-Ic-ecH" secondAttribute="trailing" constant="40" id="5NA-qE-ddw"/>
@@ -407,14 +494,14 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="&lt;--- Back">
-                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="IAD-4B-XgI" kind="show" id="8HT-NW-PLu"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KBp-bh-2cB" firstAttribute="trailing" secondItem="lRZ-Yf-mgE" secondAttribute="trailing" constant="40" id="5a3-Nh-OIL"/>
                             <constraint firstItem="lRZ-Yf-mgE" firstAttribute="leading" secondItem="KBp-bh-2cB" secondAttribute="leading" constant="40" id="pDj-Cy-Pki"/>
@@ -447,7 +534,7 @@
                                 <rect key="frame" x="302" y="98" width="50" height="700"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-K2-CgV">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="BFO-h8-tYC"/>
                                             <constraint firstAttribute="height" constant="30" id="WXt-EH-YLr"/>
@@ -459,7 +546,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJn-7Y-kDD">
-                                        <rect key="frame" x="0.0" y="81" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="61" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="b00-Xm-NGA"/>
                                         </constraints>
@@ -469,7 +556,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-ZD-NrM">
-                                        <rect key="frame" x="0.0" y="142" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="122" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="xZm-n1-czj"/>
                                         </constraints>
@@ -479,7 +566,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTj-ca-v1W">
-                                        <rect key="frame" x="0.0" y="203" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="183" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="HMT-PE-ql0"/>
                                         </constraints>
@@ -489,7 +576,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULw-W3-niH">
-                                        <rect key="frame" x="0.0" y="264" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="244" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="wqe-19-bfp"/>
                                         </constraints>
@@ -499,7 +586,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnu-S7-VHB">
-                                        <rect key="frame" x="0.0" y="325" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="305" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="sx3-sK-cHp"/>
                                         </constraints>
@@ -509,7 +596,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc5-Ml-HJR">
-                                        <rect key="frame" x="0.0" y="386" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="366" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4sj-BA-qh4"/>
                                         </constraints>
@@ -519,7 +606,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Z2-ku-dyR">
-                                        <rect key="frame" x="0.0" y="447" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="427" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="aeN-Fw-53U"/>
                                         </constraints>
@@ -529,7 +616,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77D-gV-h2M">
-                                        <rect key="frame" x="0.0" y="508" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="488" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="eI6-ms-jT8"/>
                                         </constraints>
@@ -539,7 +626,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3V-aj-1nM">
-                                        <rect key="frame" x="0.0" y="569" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="549" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="o9P-qQ-F8L"/>
                                         </constraints>
@@ -549,7 +636,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qp-ji-YP3">
-                                        <rect key="frame" x="0.0" y="630" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="610" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="nmX-yg-QsC"/>
                                         </constraints>
@@ -559,7 +646,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miu-3P-kTV">
-                                        <rect key="frame" x="0.0" y="691" width="50" height="9"/>
+                                        <rect key="frame" x="0.0" y="671" width="50" height="29"/>
                                         <state key="normal" title="Edit"/>
                                         <connections>
                                             <segue destination="69N-ff-bQn" kind="show" id="ILe-rV-ljn"/>
@@ -661,7 +748,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Yle-Kk-Xm1" firstAttribute="leading" secondItem="s3C-py-7Lx" secondAttribute="leading" constant="302" id="38b-GC-fsL"/>
                             <constraint firstItem="6hn-ar-tYa" firstAttribute="top" secondItem="s3C-py-7Lx" secondAttribute="top" constant="67" id="7aC-zC-rjP"/>
@@ -763,14 +850,14 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="&lt;--- Back">
-                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="IAD-4B-XgI" kind="show" id="sog-PH-DUs"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="g7b-iX-kJU" firstAttribute="leading" secondItem="J6f-nf-2Iu" secondAttribute="leading" constant="40" id="6zh-CO-Wjk"/>
                             <constraint firstItem="J6f-nf-2Iu" firstAttribute="trailing" secondItem="g7b-iX-kJU" secondAttribute="trailing" constant="40" id="F5s-H9-nWp"/>

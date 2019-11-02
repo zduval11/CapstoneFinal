@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
       override func viewDidLoad() {
           super.viewDidLoad()
@@ -23,24 +23,54 @@ class ViewController: UIViewController {
       
       }
     
+    @IBOutlet weak var myImg: UIImageView!
     
+    @IBOutlet weak var MedName: UITextField!
     
+    @IBOutlet weak var AmountMed: UITextField!
     
-    func scheduleNotification(_ fireDate: UIDatePicker) {
+    @IBAction func addPic(_ sender: Any) {
         
-           let db = Firestore.firestore()
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+      
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+           myImg.contentMode = .scaleToFill
+           myImg.image = pickedImage
+       }
+picker.dismiss(animated: true, completion: nil)
+}
+    
+  
+    
+    func scheduleNotification(_ fireDate: UIDatePicker, _med: UITextField, _amount: UITextField) {
+        
+           
            let content = UNMutableNotificationContent()
-           let age:String = "TAKE YO MEDS"
-           content.title = age
-           db.collection("Test Alarm").addDocument(data: ["AlarmName": [age]])
-           content.body = "Synthroid 10 mg!"
+           
+           content.title = "TAKE YOUR MEDICATION"
+           
+           content.body = _med.text! + " " + _amount.text!
            content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "sound.caf"))
            
-           let url = Bundle.main.url(forResource: "Image/med", withExtension: "jpg")
-           if let attachment = try? UNNotificationAttachment(identifier: "alarm", url: url!, options: nil ){
+           //let url = Bundle.main.url(forResource: "Image/med", withExtension: "jpg")
+        if let attachment = UNNotificationAttachment.create(identifier: "identifier", image: myImg.image!, options: nil){
            
            content.attachments = [attachment]
+        
            }
+        
+        
            
           let  dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: fireDate.date )
            
@@ -71,7 +101,7 @@ class ViewController: UIViewController {
 
     @IBAction func SetbuttonTapped(_ sender: UIButton) {
         
-        self.scheduleNotification(datePicker)
+        self.scheduleNotification(datePicker,_med: MedName,_amount: AmountMed)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = .current
         dateFormatter.dateStyle = .short
@@ -90,6 +120,27 @@ class ViewController: UIViewController {
     }
     
    
+
 }
+extension UNNotificationAttachment {
 
-
+    static func create(identifier: String, image: UIImage, options: [NSObject : AnyObject]?) -> UNNotificationAttachment? {
+        let fileManager = FileManager.default
+        let tmpSubFolderName = ProcessInfo.processInfo.globallyUniqueString
+        let tmpSubFolderURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(tmpSubFolderName, isDirectory: true)
+        do {
+            try fileManager.createDirectory(at: tmpSubFolderURL, withIntermediateDirectories: true, attributes: nil)
+            let imageFileIdentifier = identifier+".png"
+            let fileURL = tmpSubFolderURL.appendingPathComponent(imageFileIdentifier)
+            guard let imageData = image.pngData() else {
+                return nil
+            }
+            try imageData.write(to: fileURL)
+            let imageAttachment = try UNNotificationAttachment.init(identifier: imageFileIdentifier, url: fileURL, options: options)
+            return imageAttachment
+        } catch {
+            print("error " + error.localizedDescription)
+        }
+        return nil
+    }
+}
