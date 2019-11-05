@@ -8,8 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
 class LoginViewController: UIViewController {
 
+     let db = Firestore.firestore()
+   
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -61,10 +66,11 @@ class LoginViewController: UIViewController {
          // Create cleaned versions of the text field
          let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
          let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
          
          // Signing in the user
          Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-             
+         
              if error != nil {
                  // Couldn't sign in
                  self.errorLabel.text = error!.localizedDescription
@@ -80,5 +86,6 @@ class LoginViewController: UIViewController {
          }
     }
     
+   
 
 }

@@ -9,9 +9,14 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    let log = LoginViewController()
+    let vc = ViewController()
     
     @IBOutlet weak var edit1: UIButton!
+   
+    @IBAction func edit1(_ sender: Any) {
+        
+    }
     
     @IBOutlet weak var edit2: UIButton!
     

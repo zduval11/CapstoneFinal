@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1618F30D2372179200A4E5EC /* Alarm2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F30C2372179100A4E5EC /* Alarm2ViewController.swift */; };
+		1618F30F237217A700A4E5EC /* Alarm3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F30E237217A700A4E5EC /* Alarm3ViewController.swift */; };
+		1618F311237217D100A4E5EC /* Alarm4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F310237217D100A4E5EC /* Alarm4ViewController.swift */; };
+		1618F313237217E300A4E5EC /* Alarm5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F312237217E300A4E5EC /* Alarm5ViewController.swift */; };
+		1618F315237217F800A4E5EC /* Alarm6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F314237217F800A4E5EC /* Alarm6ViewController.swift */; };
+		1618F31B2372185D00A4E5EC /* Alarm7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F31A2372185D00A4E5EC /* Alarm7ViewController.swift */; };
+		1618F31D2372187800A4E5EC /* Alarm8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F31C2372187800A4E5EC /* Alarm8ViewController.swift */; };
+		1618F31F2372189100A4E5EC /* Alarm9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F31E2372189100A4E5EC /* Alarm9ViewController.swift */; };
+		1618F3212372189F00A4E5EC /* Alarm10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F3202372189F00A4E5EC /* Alarm10ViewController.swift */; };
+		1618F323237218AC00A4E5EC /* Alarm11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F322237218AC00A4E5EC /* Alarm11ViewController.swift */; };
+		1618F325237218BA00A4E5EC /* Alarm12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618F324237218BA00A4E5EC /* Alarm12ViewController.swift */; };
 		1643B7232353C54400B57A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B7222353C54400B57A69 /* AppDelegate.swift */; };
 		1643B7252353C54400B57A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B7242353C54400B57A69 /* SceneDelegate.swift */; };
 		1643B7272353C54400B57A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643B7262353C54400B57A69 /* ViewController.swift */; };
@@ -26,6 +37,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1618F30C2372179100A4E5EC /* Alarm2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm2ViewController.swift; sourceTree = "<group>"; };
+		1618F30E237217A700A4E5EC /* Alarm3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm3ViewController.swift; sourceTree = "<group>"; };
+		1618F310237217D100A4E5EC /* Alarm4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm4ViewController.swift; sourceTree = "<group>"; };
+		1618F312237217E300A4E5EC /* Alarm5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm5ViewController.swift; sourceTree = "<group>"; };
+		1618F314237217F800A4E5EC /* Alarm6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm6ViewController.swift; sourceTree = "<group>"; };
+		1618F31A2372185D00A4E5EC /* Alarm7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm7ViewController.swift; sourceTree = "<group>"; };
+		1618F31C2372187800A4E5EC /* Alarm8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm8ViewController.swift; sourceTree = "<group>"; };
+		1618F31E2372189100A4E5EC /* Alarm9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm9ViewController.swift; sourceTree = "<group>"; };
+		1618F3202372189F00A4E5EC /* Alarm10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm10ViewController.swift; sourceTree = "<group>"; };
+		1618F322237218AC00A4E5EC /* Alarm11ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm11ViewController.swift; sourceTree = "<group>"; };
+		1618F324237218BA00A4E5EC /* Alarm12ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm12ViewController.swift; sourceTree = "<group>"; };
 		1643B71F2353C54400B57A69 /* CapstoneFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1643B7222353C54400B57A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1643B7242353C54400B57A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +90,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1618F30B2372150800A4E5EC /* Alarm Views */ = {
+			isa = PBXGroup;
+			children = (
+				1643B7262353C54400B57A69 /* ViewController.swift */,
+				1618F30C2372179100A4E5EC /* Alarm2ViewController.swift */,
+				1618F30E237217A700A4E5EC /* Alarm3ViewController.swift */,
+				1618F310237217D100A4E5EC /* Alarm4ViewController.swift */,
+				1618F312237217E300A4E5EC /* Alarm5ViewController.swift */,
+				1618F314237217F800A4E5EC /* Alarm6ViewController.swift */,
+				1618F31A2372185D00A4E5EC /* Alarm7ViewController.swift */,
+				1618F31C2372187800A4E5EC /* Alarm8ViewController.swift */,
+				1618F31E2372189100A4E5EC /* Alarm9ViewController.swift */,
+				1618F3202372189F00A4E5EC /* Alarm10ViewController.swift */,
+				1618F322237218AC00A4E5EC /* Alarm11ViewController.swift */,
+				1618F324237218BA00A4E5EC /* Alarm12ViewController.swift */,
+			);
+			path = "Alarm Views";
+			sourceTree = "<group>";
+		};
 		1643B7162353C54400B57A69 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +133,7 @@
 				1643B7222353C54400B57A69 /* AppDelegate.swift */,
 				1643B7242353C54400B57A69 /* SceneDelegate.swift */,
 				1643B74C2353E46400B57A69 /* Helpers */,
+				1618F30B2372150800A4E5EC /* Alarm Views */,
 				1643B7412353D75100B57A69 /* View Controllers */,
 				1643B7282353C54400B57A69 /* Main.storyboard */,
 				1643B72B2353C54500B57A69 /* Assets.xcassets */,
@@ -107,7 +149,6 @@
 		1643B7412353D75100B57A69 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1643B7262353C54400B57A69 /* ViewController.swift */,
 				1643B7482353D82800B57A69 /* SignupLoginViewController.swift */,
 				1643B7422353D78E00B57A69 /* SignUpViewController.swift */,
 				1643B7442353D7A300B57A69 /* LoginViewController.swift */,
@@ -270,14 +311,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1618F31F2372189100A4E5EC /* Alarm9ViewController.swift in Sources */,
+				1618F325237218BA00A4E5EC /* Alarm12ViewController.swift in Sources */,
+				1618F323237218AC00A4E5EC /* Alarm11ViewController.swift in Sources */,
+				1618F31B2372185D00A4E5EC /* Alarm7ViewController.swift in Sources */,
+				1618F313237217E300A4E5EC /* Alarm5ViewController.swift in Sources */,
 				1643B7272353C54400B57A69 /* ViewController.swift in Sources */,
+				1618F311237217D100A4E5EC /* Alarm4ViewController.swift in Sources */,
 				1643B7232353C54400B57A69 /* AppDelegate.swift in Sources */,
 				1643B7432353D78E00B57A69 /* SignUpViewController.swift in Sources */,
 				1643B7492353D82800B57A69 /* SignupLoginViewController.swift in Sources */,
 				1643B7452353D7A300B57A69 /* LoginViewController.swift in Sources */,
 				1643B75223540D6800B57A69 /* HomeViewController.swift in Sources */,
+				1618F31D2372187800A4E5EC /* Alarm8ViewController.swift in Sources */,
+				1618F3212372189F00A4E5EC /* Alarm10ViewController.swift in Sources */,
 				1643B7252353C54400B57A69 /* SceneDelegate.swift in Sources */,
+				1618F315237217F800A4E5EC /* Alarm6ViewController.swift in Sources */,
+				1618F30D2372179200A4E5EC /* Alarm2ViewController.swift in Sources */,
 				1643B74B2353E44D00B57A69 /* Utilities.swift in Sources */,
+				1618F30F237217A700A4E5EC /* Alarm3ViewController.swift in Sources */,
 				1643B74E2353FD7D00B57A69 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
