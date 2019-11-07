@@ -13,7 +13,7 @@ import FirebaseDatabase
 class LoginViewController: UIViewController {
 
      let db = Firestore.firestore()
-   
+     let util = Utilities()
     
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
         
         // TODO: Validate Text Fields
          
-         // Create cleaned versions of the text field
+        // Create cleaned versions of the text field
          let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
          let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -84,8 +84,11 @@ class LoginViewController: UIViewController {
                  self.view.window?.makeKeyAndVisible()
              }
          }
-    }
+    
+
+    
     
    
 
+}
 }

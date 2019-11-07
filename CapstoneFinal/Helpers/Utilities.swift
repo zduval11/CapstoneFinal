@@ -52,25 +52,40 @@ class Utilities {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
-    
-    func scheduleNotification(_ fireDate: UIDatePicker, _med: UITextField, _amount: UITextField, _myImg: UIImage) {
+    //, _myImg: UIImage
+    func scheduleNotification(_fireDate: String, _med: String, _amount: String,_url: String) {
         
            
            let content = UNMutableNotificationContent()
            
            content.title = "TAKE YOUR MEDICATION"
            
-           content.body = _med.text! + " " + _amount.text!
+           content.body = _med + " " + _amount
            content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "sound.caf"))
-           
-           //let url = Bundle.main.url(forResource: "Image/med", withExtension: "jpg")
-        if let attachment = UNNotificationAttachment.create(identifier: "identifier", image: _myImg, options: nil){
-           
+        
+        
+        let url = URL(string:_url)
+        if let data = try? Data(contentsOf: url!)
+        {
+            let image: UIImage = UIImage(data: data)!
+            if let attachment = UNNotificationAttachment.create(identifier: "identifier", image: image, options: nil){
+        
            content.attachments = [attachment]
+         
+            }
+            
+        }
+           
         
-           }
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        let date1 = UIDatePicker()
+        let real = dateFormatter.date(from: _fireDate)
+        date1.date = real!
         
-        let  dateComponents = Calendar.current.dateComponents([.hour, .minute], from: fireDate.date )
+        
+        
+        let  dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date1.date ) //fireDate.date
         let trigger = UNCalendarNotificationTrigger(
                dateMatching: dateComponents, repeats: true)
         let identifier = "alarm"
@@ -85,7 +100,10 @@ class Utilities {
            }
     }
     
-    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
  
     
 }

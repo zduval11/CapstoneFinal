@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import Firebase
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
-    let log = LoginViewController()
-    let vc = ViewController()
+    
+    let db = Firestore.firestore()
+    let util = Utilities()
+    
     
     @IBOutlet weak var edit1: UIButton!
    
@@ -96,29 +101,91 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var alarm12: UILabel!
     
+    @IBAction func alarm1switch(_ sender: Any) {
+    
+       
+    
+    
+    
+    }
+    
+    @IBOutlet weak var switch1: UISwitch!
+    
+    
+    
+    
+       func setUpElements(){
+        Utilities.styleFilledButton(edit1)
+        Utilities.styleFilledButton(edit2)
+        Utilities.styleFilledButton(edit3)
+        Utilities.styleFilledButton(edit4)
+        Utilities.styleFilledButton(edit5)
+        Utilities.styleFilledButton(edit6)
+        Utilities.styleFilledButton(edit7)
+        Utilities.styleFilledButton(edit8)
+        Utilities.styleFilledButton(edit9)
+        Utilities.styleFilledButton(edit10)
+        Utilities.styleFilledButton(edit11)
+        Utilities.styleFilledButton(edit12)
+
+       
+
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setUpElements();
+    
+ 
+ 
+    
+}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+           // Get Alarm 1
+           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info")
+           docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                NSLog("Document data: \(dataDescription)")
+            } else {
+                NSLog("Document Doesn't Exist")
+            }
+              
+            
+            while document!.exists{
+            let date: String = document?.get("Set Date") as! String
+             let med: String = document?.get("Medication") as! String
+            let amount: String = document?.get("Amount") as! String
+                let url: String = document?.get("URL") as! String
+            
+                self.util.scheduleNotification(_fireDate: date, _med: med, _amount: amount, _url: url )
+              
+            }
+            
+        }
+        // End Alarm 1
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
     
-    func setUpElements(){
-    Utilities.styleFilledButton(edit1)
-    Utilities.styleFilledButton(edit2)
-    Utilities.styleFilledButton(edit3)
-    Utilities.styleFilledButton(edit4)
-    Utilities.styleFilledButton(edit5)
-    Utilities.styleFilledButton(edit6)
-    Utilities.styleFilledButton(edit7)
-    Utilities.styleFilledButton(edit8)
-    Utilities.styleFilledButton(edit9)
-    Utilities.styleFilledButton(edit10)
-    Utilities.styleFilledButton(edit11)
-    Utilities.styleFilledButton(edit12)
-
-   
-
-}
 
 }

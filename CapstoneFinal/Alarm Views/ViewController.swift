@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let db = Firestore.firestore()
     let log = LoginViewController()
+    var url : String = ""
+    
 
     override func viewDidLoad() {
           super.viewDidLoad()
@@ -49,6 +51,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
+           
         }
         
     }
@@ -58,25 +61,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
            myImg.contentMode = .scaleToFill
            myImg.image = pickedImage
-       }
-picker.dismiss(animated: true, completion: nil)
+            if let image = myImg.image{
+                if let data = image.pngData() {
+                    let filename = self.util.getDocumentsDirectory().appendingPathComponent("copy.png")
+                    url = filename.absoluteString
+                    
+                    try? data.write(to: filename)
+                }
+            }       }
+        picker.dismiss(animated: true, completion: nil)
 
     }
+    
+    
     
   
 
     @IBAction func SetbuttonTapped(_ sender: UIButton) {
+         //_myImg: myImg.image!
         
-        util.scheduleNotification(datePicker,_med: MedName,_amount: AmountMed, _myImg: myImg.image!)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        dateFormatter.timeZone = .current
-        dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
+        let strDate = dateFormatter.string(from: datePicker.date)
+        //util.scheduleNotification(_fireDate: strDate ,_med: MedName.text!,_amount: AmountMed.text!)
         
-       let strDate = dateFormatter.string(from: datePicker.date)
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info").setData(["Medication": MedName.text!, "Amount": AmountMed.text!, "Set Date": strDate])
+       
+        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info").setData(["Medication": MedName.text!, "Amount": AmountMed.text!, "Set Date": strDate, "URL": url])
+    
+    let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+    
+    view.window?.rootViewController = homeViewController
+    view.window?.makeKeyAndVisible()
     }
     
     @IBAction func CancelbuttonTapped(_ sender: UIButton) {
