@@ -14,9 +14,7 @@ import FirebaseDatabase
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let util = Utilities()
-    
     let db = Firestore.firestore()
-    let log = LoginViewController()
     var url : String = ""
     
 
@@ -44,6 +42,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
          add()
 
     }
+    
+    
     func add(){
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -72,11 +72,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
 
     }
+ 
     
-    
-    
-  
-
     @IBAction func SetbuttonTapped(_ sender: UIButton) {
          //_myImg: myImg.image!
         

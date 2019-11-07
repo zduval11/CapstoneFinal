@@ -1,10 +1,4 @@
-//
-//  Utilities.swift
-//  customauth
-//
-//  Created by Christopher Ching on 2019-05-09.
-//  Copyright © 2019 Christopher Ching. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
@@ -68,14 +62,13 @@ class Utilities {
         if let data = try? Data(contentsOf: url!)
         {
             let image: UIImage = UIImage(data: data)!
-            if let attachment = UNNotificationAttachment.create(identifier: "identifier", image: image, options: nil){
+            if let attachment = UNNotificationAttachment.create(identifier: _med, image: image, options: nil){
         
            content.attachments = [attachment]
          
             }
             
         }
-           
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
@@ -83,12 +76,10 @@ class Utilities {
         let real = dateFormatter.date(from: _fireDate)
         date1.date = real!
         
-        
-        
         let  dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date1.date ) //fireDate.date
         let trigger = UNCalendarNotificationTrigger(
                dateMatching: dateComponents, repeats: true)
-        let identifier = "alarm"
+        let identifier = _med
         let request = UNNotificationRequest(identifier: identifier,
                                                content: content, trigger: trigger)
         // Schedule the request with the system.
@@ -104,6 +95,8 @@ class Utilities {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
+    
+    
  
     
 }

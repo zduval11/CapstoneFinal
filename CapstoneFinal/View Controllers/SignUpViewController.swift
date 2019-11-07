@@ -62,19 +62,7 @@ class SignUpViewController: UIViewController {
 
 
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    //Check the field and validate that the data is correct. If everything is correct, this method return nil. Otherwise, it retruns the error message
     
     func validateFields() -> String?{
         
@@ -137,7 +125,7 @@ class SignUpViewController: UIViewController {
                 // User was created successfully, now store the first name and last name
                 let db = Firestore.firestore()
                  
-                db.collection("users").document(Auth.auth().currentUser!.uid).collection("User Info").addDocument(data: ["firstname" : firstName, "lastname" : lastName]){ (error) in
+                db.collection("users").document(Auth.auth().currentUser!.uid).collection("User Info").document("Data").setData(["firstname": firstName, "lastname":lastName]){ (error) in
                     
                     if error != nil {
                         // Show error message

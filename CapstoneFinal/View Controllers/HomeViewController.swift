@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
    
     @IBAction func edit1(_ sender: Any) {
         
+    
     }
     
     @IBOutlet weak var edit2: UIButton!
@@ -103,10 +104,6 @@ class HomeViewController: UIViewController {
     
     @IBAction func alarm1switch(_ sender: Any) {
     
-       
-    
-    
-    
     }
     
     @IBOutlet weak var switch1: UISwitch!
@@ -158,18 +155,54 @@ class HomeViewController: UIViewController {
             }
               
             
-            while document!.exists{
+            if document!.exists{
             let date: String = document?.get("Set Date") as! String
              let med: String = document?.get("Medication") as! String
             let amount: String = document?.get("Amount") as! String
-                let url: String = document?.get("URL") as! String
+            let url: String = document?.get("URL") as! String
             
-                self.util.scheduleNotification(_fireDate: date, _med: med, _amount: amount, _url: url )
+            self.util.scheduleNotification(_fireDate: date, _med: med, _amount: amount, _url: url )
               
+            }else{
+                NSLog("Dont exist");
             }
             
         }
-        // End Alarm 1
+        
+        let docRef2 = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 2").document("Alarm 2 Info")
+                       docRef2.getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            let dataDescription2 = document.data().map(String.init(describing:)) ?? "nil"
+                            NSLog("Document data: \(dataDescription2)")
+                        } else {
+                            NSLog("Document Doesn't Exist")
+                        }
+                          
+                        
+                        if document!.exists{
+                        let date2: String = document?.get("Set Date") as! String
+                         let med2: String = document?.get("Medication") as! String
+                        let amount2: String = document?.get("Amount") as! String
+                            let url2: String = document?.get("URL") as! String
+                        
+                            self.util.scheduleNotification(_fireDate: date2, _med: med2, _amount: amount2, _url: url2 )
+                          
+                        }else{
+                         NSLog("Document Doesn't Exist")
+                         }
+                        
+                    }
+ 
+        }
+        // End Alarm 2
+        
+        // Get Alarm 3
+        
+        
+        
+        
+        
+        // End Alarm 3
     
     
     
@@ -188,4 +221,4 @@ class HomeViewController: UIViewController {
     }
     
 
-}
+

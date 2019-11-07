@@ -7,7 +7,7 @@ struct Constants {
     struct Storyboard {
         
         static let homeViewController = "HomeVC"
-        //static let clockViewController = "clockVC"
+        static let alarm1View = "alarm1"
         
     }
     
