@@ -7,24 +7,85 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
 
-class Alarm3ViewController: UIViewController {
+class Alarm3ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let util = Utilities()
+    let db = Firestore.firestore()
+    var url : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+         datePicker.datePickerMode = UIDatePicker.Mode.time
+    
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBOutlet weak var MedName: UITextField!
+    
+    @IBOutlet weak var AmountMed: UITextField!
+    
+    @IBOutlet weak var myImg: UIImageView!
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addPic(_ sender: Any) {
+    
+        add()
+    
     }
-    */
+    
+       func add(){
+               if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+               let imagePicker = UIImagePickerController()
+               imagePicker.delegate = self
+               imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+               imagePicker.allowsEditing = true
+               self.present(imagePicker, animated: true, completion: nil)
+              
+           }
+           
+       }
+       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+         
+           
+           if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+              myImg.contentMode = .scaleToFill
+              myImg.image = pickedImage
+               if let image = myImg.image{
+                   if let data = image.pngData() {
+                       let filename = self.util.getDocumentsDirectory().appendingPathComponent("copy.png")
+                       url = filename.absoluteString
+                       
+                       try? data.write(to: filename)
+                   }
+               }       }
+           picker.dismiss(animated: true, completion: nil)
 
-}
+       }
+    
+
+    @IBAction func SetButtonTapped(_ sender: Any) {
+        
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeStyle = .short
+            let strDate = dateFormatter.string(from: datePicker.date)
+            //util.scheduleNotification(_fireDate: strDate ,_med: MedName.text!,_amount: AmountMed.text!)
+            
+           
+            db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 3").document("Alarm 3 Info").setData(["Medication": MedName.text!, "Amount": AmountMed.text!, "Set Date": strDate, "URL": url])
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        }
+    }
+    
+
