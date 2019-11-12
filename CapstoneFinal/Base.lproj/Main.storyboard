@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gb2-4A-U6R">
-                                <rect key="frame" x="0.0" y="340" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="340" width="413" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Medication Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ET-P0-gDB">
@@ -71,6 +71,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo1-ck-k1v">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -80,12 +88,13 @@
                         <outlet property="AmountMed" destination="d8U-GY-s7Q" id="Vx8-rx-5fl"/>
                         <outlet property="MedName" destination="1ET-P0-gDB" id="Vfl-CC-ZQt"/>
                         <outlet property="datePicker" destination="Gb2-4A-U6R" id="BnL-iq-3TG"/>
+                        <outlet property="errorLabel" destination="oo1-ck-k1v" id="PuH-oF-k4J"/>
                         <outlet property="myImg" destination="WIh-EH-8Ac" id="s2I-gr-S2E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="102.45535714285714"/>
+            <point key="canvasLocation" x="-762.31884057971024" y="811.60714285714278"/>
         </scene>
         <!--Alarm2 View Controller-->
         <scene sceneID="uIY-eZ-nNa">
@@ -124,17 +133,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjZ-8E-a0A">
-                                <rect key="frame" x="174" y="696" width="67" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set Alarm"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="wzu-Ur-S90" eventType="touchUpInside" id="d4w-AW-Q3h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvJ-Nk-Ft9">
-                                <rect key="frame" x="163" y="748" width="89" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delete Alarm"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="CancelButtonTapped:" destination="wzu-Ur-S90" eventType="touchUpInside" id="l18-fM-kM5"/>
                                 </connections>
@@ -143,6 +160,14 @@
                                 <rect key="frame" x="261" y="243" width="47" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWX-iT-8bj">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Ru8-c7-yY6"/>
@@ -152,6 +177,7 @@
                         <outlet property="AmountMed" destination="vPZ-gG-T1C" id="XIJ-mF-Ncy"/>
                         <outlet property="MedName" destination="b3n-Zk-ZBr" id="vyo-AV-mXV"/>
                         <outlet property="datePicker" destination="qMm-bx-twK" id="xu1-3h-7yN"/>
+                        <outlet property="errorLabel" destination="VWX-iT-8bj" id="ObA-lV-Qry"/>
                         <outlet property="myImg" destination="v8u-4F-ekP" id="PAQ-lw-PjD"/>
                     </connections>
                 </viewController>
@@ -192,17 +218,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzU-1d-BMJ">
-                                <rect key="frame" x="184" y="627" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="YwB-hF-eRr" eventType="touchUpInside" id="DD2-bE-vM2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0y-Z7-Yfn">
-                                <rect key="frame" x="184" y="683" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="YwB-hF-eRr" eventType="touchUpInside" id="eaY-xf-tfb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecR-Xt-EbD">
                                 <rect key="frame" x="164" y="240" width="87" height="37"/>
@@ -212,6 +249,14 @@
                                     <action selector="addPic:" destination="YwB-hF-eRr" eventType="touchUpInside" id="nHG-Lp-eTP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKf-5V-Ha0">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fth-VL-hwl"/>
@@ -221,12 +266,13 @@
                         <outlet property="AmountMed" destination="xVj-ux-n8g" id="FXg-M9-DDs"/>
                         <outlet property="MedName" destination="U4j-rT-QAv" id="tjS-tI-PlP"/>
                         <outlet property="datePicker" destination="hiL-7i-8d1" id="vHb-73-HTv"/>
+                        <outlet property="errorLabel" destination="ZKf-5V-Ha0" id="OfD-N6-I6c"/>
                         <outlet property="myImg" destination="1ok-mG-SJx" id="10M-nq-kY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAK-mB-AQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="1483.9285714285713"/>
+            <point key="canvasLocation" x="3394" y="812"/>
         </scene>
         <!--Alarm10 View Controller-->
         <scene sceneID="r0a-Yd-va9">
@@ -257,18 +303,29 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-Bg-WbR">
-                                <rect key="frame" x="184" y="751" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="OQu-TO-fFH" eventType="touchUpInside" id="w9V-Rh-zlZ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bmD-t0-S2V">
                                 <rect key="frame" x="261" y="243" width="47" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkB-TD-vfJ">
-                                <rect key="frame" x="184" y="689" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="OQu-TO-fFH" eventType="touchUpInside" id="wyW-xx-GFV"/>
                                 </connections>
@@ -281,6 +338,14 @@
                                     <action selector="addPic:" destination="OQu-TO-fFH" eventType="touchUpInside" id="qD7-hj-2qE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-il-eVk">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="MkO-VK-Gh1"/>
@@ -290,12 +355,13 @@
                         <outlet property="AmountMed" destination="65l-II-bv4" id="8E1-cZ-jte"/>
                         <outlet property="MedName" destination="WTt-2m-1Hk" id="MRB-3k-rmo"/>
                         <outlet property="datePicker" destination="6G3-HB-ECf" id="vfj-XT-biJ"/>
+                        <outlet property="errorLabel" destination="yYf-il-eVk" id="bQd-YP-Tiq"/>
                         <outlet property="myImg" destination="bmD-t0-S2V" id="Svg-RX-RZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOJ-m1-8LM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="2190"/>
+            <point key="canvasLocation" x="1835" y="1492"/>
         </scene>
         <!--Alarm11 View Controller-->
         <scene sceneID="iz1-oc-Ko6">
@@ -326,14 +392,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlS-jF-y4W">
-                                <rect key="frame" x="184" y="734" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="AA9-mI-4Np" eventType="touchUpInside" id="O9Q-0Z-0Fx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFh-As-ZMY">
-                                <rect key="frame" x="184" y="666" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="AA9-mI-4Np" eventType="touchUpInside" id="CFW-Xi-IhU"/>
                                 </connections>
@@ -350,6 +427,14 @@
                                     <action selector="addPic:" destination="AA9-mI-4Np" eventType="touchUpInside" id="qQs-jV-ij4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6N-T2-QVE">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="n21-f1-gou"/>
@@ -359,12 +444,13 @@
                         <outlet property="AmountMed" destination="PMH-yi-SrA" id="wkE-OI-sup"/>
                         <outlet property="MedName" destination="scQ-0e-R2B" id="nv1-Bs-gNN"/>
                         <outlet property="datePicker" destination="FFg-vr-TBd" id="jZo-62-e9O"/>
+                        <outlet property="errorLabel" destination="I6N-T2-QVE" id="e7c-LF-wY6"/>
                         <outlet property="myImg" destination="wc5-f0-kAK" id="nLz-yc-vYR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoP-VW-GPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="2184"/>
+            <point key="canvasLocation" x="2630" y="1492"/>
         </scene>
         <!--Alarm12 View Controller-->
         <scene sceneID="dT2-zc-Xlc">
@@ -395,9 +481,16 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yN7-fG-cDK">
-                                <rect key="frame" x="184" y="763" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="69N-ff-bQn" eventType="touchUpInside" id="tEJ-hO-y2N"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoN-zV-Yu3">
                                 <rect key="frame" x="171" y="240" width="72" height="30"/>
@@ -412,13 +505,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjb-f9-sL7">
-                                <rect key="frame" x="184" y="725" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="69N-ff-bQn" eventType="touchUpInside" id="zpg-LC-gkG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTB-df-amE">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="7S9-4v-GsU"/>
@@ -428,12 +533,13 @@
                         <outlet property="AmountMed" destination="fPV-nr-mY1" id="2Jz-Q1-pj9"/>
                         <outlet property="MedName" destination="Z7D-yy-okS" id="wRh-FI-QIg"/>
                         <outlet property="datePicker" destination="7Lk-YC-WmX" id="JVv-p8-1bO"/>
+                        <outlet property="errorLabel" destination="CTB-df-amE" id="H41-mY-RJz"/>
                         <outlet property="myImg" destination="h43-FD-yP8" id="gFi-7b-k4w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVV-ZE-SEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="2187"/>
+            <point key="canvasLocation" x="3393" y="1492"/>
         </scene>
         <!--Alarm7 View Controller-->
         <scene sceneID="j6x-eM-GdB">
@@ -468,17 +574,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvC-8j-U6Z">
-                                <rect key="frame" x="184" y="628" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="u8g-0j-LjE" eventType="touchUpInside" id="40K-Y6-NF6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVA-UG-Agr">
-                                <rect key="frame" x="184" y="692" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="u8g-0j-LjE" eventType="touchUpInside" id="Gby-Ic-V1F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2I-9d-pim">
                                 <rect key="frame" x="171" y="243" width="72" height="30"/>
@@ -488,6 +605,14 @@
                                     <action selector="addPic:" destination="u8g-0j-LjE" eventType="touchUpInside" id="JHk-NT-1Fp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oke-fr-gJY">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="u3w-sL-adi"/>
@@ -497,12 +622,13 @@
                         <outlet property="AmountMed" destination="TqH-T7-W2u" id="Oyl-Oo-b1T"/>
                         <outlet property="MedName" destination="BaD-jB-3tm" id="y8S-ka-WtA"/>
                         <outlet property="datePicker" destination="Ld3-Wc-6ed" id="fOd-5B-hmj"/>
+                        <outlet property="errorLabel" destination="Oke-fr-gJY" id="hPk-Ok-uDJ"/>
                         <outlet property="myImg" destination="qkR-vW-zsH" id="Y3R-QU-73y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpx-G0-Bnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="1473"/>
+            <point key="canvasLocation" x="-762" y="1492"/>
         </scene>
         <!--Alarm8 View Controller-->
         <scene sceneID="fD8-no-l0d">
@@ -517,17 +643,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJc-Tq-xtI">
-                                <rect key="frame" x="184" y="623" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="InI-nP-PjY" eventType="touchUpInside" id="tcZ-nU-nxq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxz-En-z3W">
-                                <rect key="frame" x="184" y="695" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="InI-nP-PjY" eventType="touchUpInside" id="bfw-DX-rgI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Medication Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3Z-pc-bJ5">
                                 <rect key="frame" x="118" y="156" width="178" height="34"/>
@@ -557,6 +694,14 @@
                                     <action selector="addPic:" destination="InI-nP-PjY" eventType="touchUpInside" id="FUh-8f-23l"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3M-og-21U">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2uJ-4w-yIm"/>
@@ -566,12 +711,13 @@
                         <outlet property="AmountMed" destination="Bwy-YZ-e0f" id="pYO-kv-NSu"/>
                         <outlet property="MedName" destination="C3Z-pc-bJ5" id="qGJ-Ts-VdH"/>
                         <outlet property="datePicker" destination="vfm-Na-h56" id="q62-qa-uzO"/>
+                        <outlet property="errorLabel" destination="w3M-og-21U" id="nEY-wG-Xjx"/>
                         <outlet property="myImg" destination="g1C-rV-Xhd" id="aP0-bQ-yLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzp-zm-bTE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="1463"/>
+            <point key="canvasLocation" x="64" y="1492"/>
         </scene>
         <!--Alarm9 View Controller-->
         <scene sceneID="FLF-e9-HKH">
@@ -602,14 +748,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpG-vm-BPN">
-                                <rect key="frame" x="184" y="752" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="uFm-4y-pTA" eventType="touchUpInside" id="nhe-SI-i0W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCV-Ky-jVE">
-                                <rect key="frame" x="184" y="688" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="uFm-4y-pTA" eventType="touchUpInside" id="xUS-Rl-e84"/>
                                 </connections>
@@ -626,6 +783,14 @@
                                     <action selector="addPic:" destination="uFm-4y-pTA" eventType="touchUpInside" id="9UT-93-OCs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev4-VV-r8X">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="1Ns-mu-uQC"/>
@@ -635,12 +800,13 @@
                         <outlet property="AmountMed" destination="Mni-vz-58d" id="Qtx-ZT-Xfk"/>
                         <outlet property="MedName" destination="1qB-ik-EaA" id="Qku-GV-s9R"/>
                         <outlet property="datePicker" destination="K2c-uk-vZS" id="Phj-iS-8eK"/>
+                        <outlet property="errorLabel" destination="Ev4-VV-r8X" id="gp4-ur-lxf"/>
                         <outlet property="myImg" destination="jjY-oU-E8Q" id="dd8-E3-rC1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQ8-Mq-BUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637.68115942029" y="1472.5446428571429"/>
+            <point key="canvasLocation" x="958" y="1492"/>
         </scene>
         <!--Alarm4 View Controller-->
         <scene sceneID="G8w-Rx-AvH">
@@ -671,17 +837,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTA-KX-WMg">
-                                <rect key="frame" x="184" y="611" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="cgC-RM-ssO" eventType="touchUpInside" id="joD-wJ-UOJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ze9-8W-lCg">
-                                <rect key="frame" x="184" y="689" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="cgC-RM-ssO" eventType="touchUpInside" id="qjh-qZ-HGU"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLe-f9-SD9">
                                 <rect key="frame" x="261" y="243" width="47" height="48"/>
@@ -695,6 +872,14 @@
                                     <action selector="addPic:" destination="cgC-RM-ssO" eventType="touchUpInside" id="DNW-n4-wEp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-kE-0Js">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fgl-Wh-7Zx"/>
@@ -704,6 +889,7 @@
                         <outlet property="AmountMed" destination="X1g-7p-sZC" id="ziT-IB-dqr"/>
                         <outlet property="MedName" destination="e2C-GI-ib7" id="t0U-9L-yd8"/>
                         <outlet property="datePicker" destination="hvj-GC-gdI" id="OMT-jV-U5f"/>
+                        <outlet property="errorLabel" destination="gWr-kE-0Js" id="db8-eY-bTL"/>
                         <outlet property="myImg" destination="PLe-f9-SD9" id="0wS-CR-ca6"/>
                     </connections>
                 </viewController>
@@ -724,17 +910,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfk-Sx-Z7y">
-                                <rect key="frame" x="184" y="593" width="46" height="30"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="KLv-n0-Qxv" eventType="touchUpInside" id="WeY-gm-GPv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HY-Ue-UW3">
-                                <rect key="frame" x="184" y="693" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="KLv-n0-Qxv" eventType="touchUpInside" id="FGd-ig-QBL"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Medication Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1w7-yP-v74">
                                 <rect key="frame" x="118" y="156" width="178" height="34"/>
@@ -764,6 +961,14 @@
                                     <action selector="addPic:" destination="KLv-n0-Qxv" eventType="touchUpInside" id="cYQ-ag-zYE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8et-xf-qcp">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="DxY-Bb-XCQ"/>
@@ -773,12 +978,13 @@
                         <outlet property="AmountMed" destination="FBx-ky-TvE" id="N3g-Kf-Gro"/>
                         <outlet property="MedName" destination="1w7-yP-v74" id="eJv-WJ-x8t"/>
                         <outlet property="datePicker" destination="Cph-iS-4BY" id="Hox-2o-hxm"/>
+                        <outlet property="errorLabel" destination="8et-xf-qcp" id="YGM-bY-lFo"/>
                         <outlet property="myImg" destination="MdJ-SX-8pZ" id="zeS-DS-lut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNO-6H-0dR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633" y="812"/>
+            <point key="canvasLocation" x="2630.434782608696" y="811.60714285714278"/>
         </scene>
         <!--Alarm3 View Controller-->
         <scene sceneID="XSK-a1-wDR">
@@ -811,17 +1017,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zja-4B-fVJ">
-                                <rect key="frame" x="184" y="704" width="46" height="20"/>
+                                <rect key="frame" x="153" y="640" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="SetButtonTapped:" destination="ddO-Hm-zI0" eventType="touchUpInside" id="7Br-mF-3XN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YF7-kw-DPZ">
-                                <rect key="frame" x="184" y="754" width="46" height="30"/>
+                                <rect key="frame" x="153" y="716" width="109" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonTapped:" destination="ddO-Hm-zI0" eventType="touchUpInside" id="kD1-z5-TpI"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xyr-3d-6M6">
                                 <rect key="frame" x="261" y="243" width="47" height="48"/>
@@ -833,6 +1050,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE FILL IN ALL FIELDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adh-bz-Zuy">
+                                <rect key="frame" x="63" y="510" width="287" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="xCo-EV-z5r"/>
@@ -842,6 +1067,7 @@
                         <outlet property="AmountMed" destination="y33-7v-2hf" id="s9p-Y2-1td"/>
                         <outlet property="MedName" destination="3US-3o-Erj" id="OR3-8w-j1H"/>
                         <outlet property="datePicker" destination="fBO-Ib-BgL" id="mAu-Eh-E9f"/>
+                        <outlet property="errorLabel" destination="adh-bz-Zuy" id="DXC-rm-x6v"/>
                         <outlet property="myImg" destination="Xyr-3d-6M6" id="Q2A-ay-FGB"/>
                     </connections>
                 </viewController>
@@ -1289,6 +1515,7 @@
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="s3C-py-7Lx"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mfT-b0-0bT"/>
                     <connections>
                         <outlet property="alarm1" destination="XEr-Er-SMc" id="Efp-Lz-qdd"/>
                         <outlet property="alarm10" destination="drj-PV-zGc" id="B5g-w2-pPj"/>

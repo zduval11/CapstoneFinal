@@ -35,12 +35,15 @@ class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var myImg: UIImageView!
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
     @IBAction func addPic(_ sender: Any) {
         add()
     }
     
     @IBAction func SetButtonTapped(_ sender: Any) {
             
+        if (MedName.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && AmountMed.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && myImg.image != nil){
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = .short
             let strDate = dateFormatter.string(from: datePicker.date)
@@ -53,7 +56,17 @@ class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
+        }else{
+            errorLabel.alpha = 1
         }
+        }
+    
+    @IBAction func CancelButtonTapped(_ sender: Any) {
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+    }
     
     
     

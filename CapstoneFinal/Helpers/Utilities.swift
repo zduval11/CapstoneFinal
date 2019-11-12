@@ -51,6 +51,7 @@ class Utilities {
         
            
            let content = UNMutableNotificationContent()
+           let userActions = "User Actions"
            
            content.title = "TAKE YOUR MEDICATION"
            
@@ -69,6 +70,8 @@ class Utilities {
             }
             
         }
+        
+        content.categoryIdentifier = userActions
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
@@ -89,17 +92,25 @@ class Utilities {
                    // Handle any errors.
                }
            }
+        
+        
+        let TookAction = UNNotificationAction(identifier: "Delete", title: "I TOOK IT!", options: [])
+        let category = UNNotificationCategory(identifier: userActions, actions: [TookAction], intentIdentifiers: [], options: [])
+        
+        notificationCenter.setNotificationCategories([category])
+        
     }
     
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-    
+        
     
  
     
 }
+
 
 extension UNNotificationAttachment {
 
@@ -124,4 +135,6 @@ extension UNNotificationAttachment {
     }
 
 }
+
+
 

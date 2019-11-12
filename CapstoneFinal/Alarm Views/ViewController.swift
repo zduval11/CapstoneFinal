@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let util = Utilities()
     let db = Firestore.firestore()
     var url : String = ""
+    let trans = SignUpViewController()
     
 
     override func viewDidLoad() {
@@ -35,7 +36,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
-
+    @IBOutlet weak var errorLabel: UILabel!
+    
     
     @IBAction func addPic(_ sender: Any) {
         
@@ -77,6 +79,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func SetbuttonTapped(_ sender: UIButton) {
          //_myImg: myImg.image!
         
+       
+        if(MedName.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && AmountMed.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && myImg.image != nil){
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         let strDate = dateFormatter.string(from: datePicker.date)
@@ -89,10 +93,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     view.window?.rootViewController = homeViewController
     view.window?.makeKeyAndVisible()
+            }else{
+            errorLabel.alpha = 1
+        }
+    
+    
     }
     
     @IBAction func CancelbuttonTapped(_ sender: UIButton) {
         NSLog ("Alarm Cancel button tapped");
+         
+               
+               let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+               
+               view.window?.rootViewController = homeViewController
+               view.window?.makeKeyAndVisible()
+               
+           
+        
+        
+        
     }
     
 

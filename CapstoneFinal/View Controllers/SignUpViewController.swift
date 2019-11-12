@@ -14,7 +14,7 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
-    
+    let util = Utilities()
     
     @IBOutlet weak var firstnameTextField: UITextField!
     
@@ -160,6 +160,7 @@ class SignUpViewController: UIViewController {
         view.window?.makeKeyAndVisible()
         
     }
+    
     
 
 
