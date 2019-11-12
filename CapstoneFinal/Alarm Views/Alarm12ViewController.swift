@@ -13,8 +13,13 @@ import FirebaseDatabase
 
 class Alarm12ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //Declaring Utilites reference
     let util = Utilities()
+    
+    //Declaring database reference
     let db = Firestore.firestore()
+    
+    //Declaring varaible to hold URL
     var url : String = ""
 
     override func viewDidLoad() {
@@ -24,34 +29,29 @@ class Alarm12ViewController: UIViewController, UIImagePickerControllerDelegate, 
     datePicker.datePickerMode = UIDatePicker.Mode.time
     }
     
+    //Declaring Outlets
     @IBOutlet weak var MedName: UITextField!
-    
-
     @IBOutlet weak var AmountMed: UITextField!
-    
-
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-
-
     @IBOutlet weak var myImg: UIImageView!
-    
-
     @IBOutlet weak var errorLabel: UILabel!
     
+    
+    //Action when Add Photo Button is tapped
     @IBAction func addPic(_ sender: Any) {
         add()
     
     }
     
-
+    //Action when Set Button is tapped
     @IBAction func SetButtonTapped(_ sender: Any) {
-            
+        
+        //Sends data to firebase if all fields are filled in, else shows error message to user
         if (MedName.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && AmountMed.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && myImg.image != nil){
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = .short
             let strDate = dateFormatter.string(from: datePicker.date)
-            //util.scheduleNotification(_fireDate: strDate ,_med: MedName.text!,_amount: AmountMed.text!)
+            
             
            
             db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 12").document("Alarm 12 Info").setData(["Medication": MedName.text!, "Amount": AmountMed.text!, "Set Date": strDate, "URL": url])
@@ -63,9 +63,10 @@ class Alarm12ViewController: UIViewController, UIImagePickerControllerDelegate, 
         }else{
             errorLabel.alpha = 1
         }
-        }
+    }
     
     
+    //Action when Cancel Button is tapped
     @IBAction func CancelButtonTapped(_ sender: Any) {
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
         
@@ -73,7 +74,7 @@ class Alarm12ViewController: UIViewController, UIImagePickerControllerDelegate, 
         view.window?.makeKeyAndVisible()
     }
     
-    
+    //Function to add selected image to UIImageView
     func add(){
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -86,6 +87,7 @@ class Alarm12ViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
+//Converting UImage to URl and saving locally
 func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       
         
@@ -105,13 +107,6 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
         picker.dismiss(animated: true, completion: nil)
 
     }
-
-
-
-
-
-
-
 }
 
 

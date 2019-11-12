@@ -12,52 +12,36 @@ import FirebaseFirestore
 import FirebaseDatabase
 class LoginViewController: UIViewController {
 
+     //Create Database Reference
      let db = Firestore.firestore()
-     let util = Utilities()
-    
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    
-    @IBOutlet weak var loginButton: UIButton!
-    
-    
-    @IBOutlet weak var backButton: UIButton!
-    
-    
-    @IBOutlet weak var errorLabel: UILabel!
-    
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Calling function to style buttons and labels
         setUpElements()
     }
     
-       
-       
-       func setUpElements(){
-           //hide error label
-           errorLabel.alpha = 0
-           
-           //style elements
-           Utilities.styleTextField(emailTextField)
-           Utilities.styleTextField(passwordTextField)
-           Utilities.styleFilledButton(loginButton)
-
-
-
-       }
-       
-
+    //Function to style buttons and labels
+    func setUpElements(){
+               //hide error label
+               errorLabel.alpha = 0
+               
+               //style elements
+               Utilities.styleTextField(emailTextField)
+               Utilities.styleTextField(passwordTextField)
+               Utilities.styleFilledButton(loginButton)
+    }
     
-
-
-
+    //Declaring outlets
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
+    //Actions for when login button is tapped
     @IBAction func loginTapped(_ sender: Any) {
         
         // TODO: Validate Text Fields
@@ -83,11 +67,5 @@ class LoginViewController: UIViewController {
                  self.view.window?.makeKeyAndVisible()
              }
          }
-    
-
-    
-    
-   
-
-}
+    }
 }

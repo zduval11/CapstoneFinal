@@ -7,25 +7,34 @@
 //
 
 import UIKit
+import Firebase
 
 class SignupLoginViewController: UIViewController {
 
-    
- 
-    @IBOutlet weak var signUpButton: UIButton!
-    
-    
-    @IBOutlet weak var loginButton: UIButton!
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
+         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+         // Do any additional setup after loading the view.
+         
+         //Calling function to see if user is logged in
+         authenticateUserAndConfigureView()
+         setUpElements()
+     
+     }
     
-        setUpElements()
-    
+    //Fucntion to see if  is still user signed in
+    func authenticateUserAndConfigureView(){
+        if Auth.auth().currentUser != nil{
+            DispatchQueue.main.async {
+                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+                
+                self.view.window?.rootViewController = homeViewController
+                self.view.window?.makeKeyAndVisible()
+            }
+        }
     }
     
+    //Fucntion to style Buttons
     func setUpElements(){
         
         
@@ -35,5 +44,9 @@ class SignupLoginViewController: UIViewController {
 
 
     }
+    
+    //Declaring Outlets
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
 }

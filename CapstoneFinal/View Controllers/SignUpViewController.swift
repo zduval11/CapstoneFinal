@@ -14,39 +14,14 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
-    let util = Utilities()
-    
-    @IBOutlet weak var firstnameTextField: UITextField!
-    
-    
-    @IBOutlet weak var lastnameTextField: UITextField!
-    
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    
-    @IBOutlet weak var signUpButton: UIButton!
-    
-    @IBOutlet weak var backButton: UIButton!
-    
-    @IBOutlet weak var errorLabel: UILabel!
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
+         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    setUpElements()
-    }
+     //Calling function to style buttons and labels
+     setUpElements()
+     }
     
+    //Function to style buttons and labels
     func setUpElements(){
         //hide error label
         errorLabel.alpha = 0
@@ -57,13 +32,20 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
-        
-
-
-
-    }
-
+}
     
+    //Declaring outlets
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
+    
+    //Validating all fields
     func validateFields() -> String?{
         
         //Check that all fields are filled in
@@ -86,7 +68,7 @@ class SignUpViewController: UIViewController {
         return nil
     }
 
-
+    //Actions for when Sign Up Button is tapepd
     @IBAction func signUpTapped(_ sender: Any) {
         //Validate field
         
@@ -145,13 +127,14 @@ class SignUpViewController: UIViewController {
     
     
 }
-    
+    //Function that is called to display error message
     func showError(_ message:String) {
         
         errorLabel.text = message
         errorLabel.alpha = 1
     }
     
+    //Function called to transition to homescreen programatically 
     func transitionToHome() {
         
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController

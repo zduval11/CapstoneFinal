@@ -13,413 +13,79 @@ import FirebaseDatabase
 
 class HomeViewController: UIViewController {
     
+    //Creating database reference
     let db = Firestore.firestore()
+    
+    //Declaring utilites reference 
     let util = Utilities()
-    
-    @IBOutlet weak var name: UILabel!
-    
-    @IBOutlet weak var edit1: UIButton!
-    
-    @IBOutlet weak var edit2: UIButton!
-    
-    @IBOutlet weak var edit3: UIButton!
-    
-    @IBOutlet weak var edit4: UIButton!
-    
-    
-    @IBOutlet weak var edit5: UIButton!
-    
-    
-    @IBOutlet weak var edit6: UIButton!
-    
-    @IBOutlet weak var edit7: UIButton!
-    
-    
-    @IBOutlet weak var edit8: UIButton!
-    
-    
-    @IBOutlet weak var edit9: UIButton!
-    
-    
-    @IBOutlet weak var edit10: UIButton!
-    
-    
-    
-    @IBOutlet weak var edit11: UIButton!
-    
-    
-    @IBOutlet weak var edit12: UIButton!
-    
-    
-    
-    @IBOutlet weak var alarm1: UILabel!
-    
-    
-    
-    @IBOutlet weak var alarm2: UILabel!
-    
-    
-    
-    
-    @IBOutlet weak var alarm3: UILabel!
-    
-    
-    
-    
-    @IBOutlet weak var alarm4: UILabel!
-    
-    
-    
-    
-    @IBOutlet weak var alarm5: UILabel!
-    
-    
-    
-    @IBOutlet weak var alarm6: UILabel!
-    
-    
-    
-    @IBOutlet weak var alarm7: UILabel!
-    
-    
-    
-    
-    @IBOutlet weak var alarm8: UILabel!
-    
-    
-    @IBOutlet weak var alarm9: UILabel!
-    
-    
-    
-    @IBOutlet weak var alarm10: UILabel!
-    
-    
-    @IBOutlet weak var alarm11: UILabel!
-    
-    @IBOutlet weak var alarm12: UILabel!
-    
-    @IBAction func d1(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm1.text = "Not Set"
-              
-            }
-            
-        }
-
-        
-    }
-    
-        
-    @IBAction func d2(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 2").document("Alarm 2 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 2").document("Alarm 2 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm2.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d3(_ sender: Any) {
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 3").document("Alarm 3 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 3").document("Alarm 3 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm3.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d4(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 4").document("Alarm 4 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 4").document("Alarm 4 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm4.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d5(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 5").document("Alarm 5 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 5").document("Alarm 5 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm5.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d6(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 6").document("Alarm 6 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 6").document("Alarm 6 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm6.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d7(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 7").document("Alarm 7 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 7").document("Alarm 7 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm7.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d8(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 8").document("Alarm 8 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 8").document("Alarm 8 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm8.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d9(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 9").document("Alarm 9 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 9").document("Alarm 9 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm9.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d10(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 10").document("Alarm 10 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 10").document("Alarm 10 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm10.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d11(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 11").document("Alarm 11 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 11").document("Alarm 11 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm11.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    @IBAction func d12(_ sender: Any) {
-        
-        db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 12").document("Alarm 12 Info").delete()
-        
-           let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 12").document("Alarm 12 Info")
-           docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                NSLog("Document data: \(dataDescription)")
-            } else {
-                NSLog("Document Doesn't Exist")
-            }
-              
-            
-            if document!.exists == false{
-            
-            self.alarm12.text = "Not Set"
-              
-            }
-            
-        }
-    }
-    
-    
-    
-    
-    func setUpElements(){
-        Utilities.styleFilledButton(edit1)
-        Utilities.styleFilledButton(edit2)
-        Utilities.styleFilledButton(edit3)
-        Utilities.styleFilledButton(edit4)
-        Utilities.styleFilledButton(edit5)
-        Utilities.styleFilledButton(edit6)
-        Utilities.styleFilledButton(edit7)
-        Utilities.styleFilledButton(edit8)
-        Utilities.styleFilledButton(edit9)
-        Utilities.styleFilledButton(edit10)
-        Utilities.styleFilledButton(edit11)
-        Utilities.styleFilledButton(edit12)
-        
-       
-
-    }
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        //Calling function to style buttons
         setUpElements();
+    }
     
- 
- 
+    //Function to style buttons
+     func setUpElements(){
+         Utilities.styleFilledButton(edit1)
+         Utilities.styleFilledButton(edit2)
+         Utilities.styleFilledButton(edit3)
+         Utilities.styleFilledButton(edit4)
+         Utilities.styleFilledButton(edit5)
+         Utilities.styleFilledButton(edit6)
+         Utilities.styleFilledButton(edit7)
+         Utilities.styleFilledButton(edit8)
+         Utilities.styleFilledButton(edit9)
+         Utilities.styleFilledButton(edit10)
+         Utilities.styleFilledButton(edit11)
+         Utilities.styleFilledButton(edit12)
+     }
+   
+    //Declaring outlets
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var edit1: UIButton!
+    @IBOutlet weak var edit2: UIButton!
+    @IBOutlet weak var edit3: UIButton!
+    @IBOutlet weak var edit4: UIButton!
+    @IBOutlet weak var edit5: UIButton!
+    @IBOutlet weak var edit6: UIButton!
+    @IBOutlet weak var edit7: UIButton!
+    @IBOutlet weak var edit8: UIButton!
+    @IBOutlet weak var edit9: UIButton!
+    @IBOutlet weak var edit10: UIButton!
+    @IBOutlet weak var edit11: UIButton!
+    @IBOutlet weak var edit12: UIButton!
+    @IBOutlet weak var alarm1: UILabel!
+    @IBOutlet weak var alarm2: UILabel!
+    @IBOutlet weak var alarm3: UILabel!
+    @IBOutlet weak var alarm4: UILabel!
+    @IBOutlet weak var alarm5: UILabel!
+    @IBOutlet weak var alarm6: UILabel!
+    @IBOutlet weak var alarm7: UILabel!
+    @IBOutlet weak var alarm8: UILabel!
+    @IBOutlet weak var alarm9: UILabel!
+    @IBOutlet weak var alarm10: UILabel!
+    @IBOutlet weak var alarm11: UILabel!
+    @IBOutlet weak var alarm12: UILabel!
     
-}
+    //Log User Out
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        try! Auth.auth().signOut()
+
+        if let storyboard = self.storyboard {
+            let signuploginview = storyboard.instantiateViewController(identifier: Constants.Storyboard.signuploginview) as? SignupLoginViewController
+                          
+                          view.window?.rootViewController = signuploginview
+                          view.window?.makeKeyAndVisible()
+                }
+    }
     
+   
+    
+    //Funtion to get Alarms back and set name header every time view is on screen
     override func viewDidAppear(_ animated: Bool) {
         
         //Get Name Header
@@ -444,12 +110,6 @@ class HomeViewController: UIViewController {
             }
             
         }
-        
-        
-        
-        
-        
-        
         
         // Get Alarm 1
            let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info")
@@ -781,20 +441,299 @@ class HomeViewController: UIViewController {
              }
             
         }
+        //End Alarm 12
         
-      
-            //End Alarm 12
-    
-    
-    
-    
-    
-    
-    
-    
     }
     //end func
     
+    //Delete alarm 1 date
+       @IBAction func d1(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 1").document("Alarm 1 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm1.text = "Not Set"
+                 
+               }
+               
+           }
+
+           
+       }
+       
+       //Delete alarm 2 date
+       @IBAction func d2(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 2").document("Alarm 2 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 2").document("Alarm 2 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm2.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 3 date
+       @IBAction func d3(_ sender: Any) {
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 3").document("Alarm 3 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 3").document("Alarm 3 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm3.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 4
+       @IBAction func d4(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 4").document("Alarm 4 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 4").document("Alarm 4 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm4.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 5 date
+       @IBAction func d5(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 5").document("Alarm 5 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 5").document("Alarm 5 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm5.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 6 date
+       @IBAction func d6(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 6").document("Alarm 6 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 6").document("Alarm 6 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm6.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 7 date
+       @IBAction func d7(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 7").document("Alarm 7 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 7").document("Alarm 7 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm7.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 8 date
+       @IBAction func d8(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 8").document("Alarm 8 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 8").document("Alarm 8 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm8.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 9 date
+       @IBAction func d9(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 9").document("Alarm 9 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 9").document("Alarm 9 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm9.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 10 date
+       @IBAction func d10(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 10").document("Alarm 10 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 10").document("Alarm 10 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm10.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 11 date
+       @IBAction func d11(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 11").document("Alarm 11 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 11").document("Alarm 11 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm11.text = "Not Set"
+                 
+               }
+               
+           }
+       }
+       
+       //Delete alarm 12 date
+       @IBAction func d12(_ sender: Any) {
+           
+           db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 12").document("Alarm 12 Info").delete()
+           
+              let docRef = db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 12").document("Alarm 12 Info")
+              docRef.getDocument { (document, error) in
+               if let document = document, document.exists {
+                   let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                   NSLog("Document data: \(dataDescription)")
+               } else {
+                   NSLog("Document Doesn't Exist")
+               }
+                 
+               
+               if document!.exists == false{
+               
+               self.alarm12.text = "Not Set"
+                 
+               }
+               
+           }
+       }
 
 }
     

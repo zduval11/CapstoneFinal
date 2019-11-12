@@ -13,8 +13,13 @@ import FirebaseDatabase
 
 class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //Creating Utilities Reference
     let util = Utilities()
+    
+    //Creating database reference
     let db = Firestore.firestore()
+    
+    //Variable to hold url
     var url : String = ""
 
     override func viewDidLoad() {
@@ -24,30 +29,28 @@ class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, 
     datePicker.datePickerMode = UIDatePicker.Mode.time
     }
     
-
+    
+    //Declaring Outlets
     @IBOutlet weak var MedName: UITextField!
-    
     @IBOutlet weak var AmountMed: UITextField!
-    
-
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-
     @IBOutlet weak var myImg: UIImageView!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
+    //Action when Add Photo button is tapped
     @IBAction func addPic(_ sender: Any) {
         add()
     }
     
+    //Action when Set button is tapped
     @IBAction func SetButtonTapped(_ sender: Any) {
             
+        //Sends data to firebase if all fields are filled in, else shows error message to user
         if (MedName.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && AmountMed.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && myImg.image != nil){
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = .short
             let strDate = dateFormatter.string(from: datePicker.date)
-            //util.scheduleNotification(_fireDate: strDate ,_med: MedName.text!,_amount: AmountMed.text!)
+            
             
            
             db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 10").document("Alarm 10 Info").setData(["Medication": MedName.text!, "Amount": AmountMed.text!, "Set Date": strDate, "URL": url])
@@ -61,6 +64,7 @@ class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         }
     
+    //Action when cancel button is tapped
     @IBAction func CancelButtonTapped(_ sender: Any) {
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
         
@@ -69,7 +73,7 @@ class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
-    
+    //Function to add selected image to UIImageView
     func add(){
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -81,6 +85,8 @@ class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
     }
+    
+    //Converting UImage to URl and saving locally
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       
         
@@ -100,9 +106,5 @@ class Alarm10ViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
 
     }
-
-
-
-
 
 }

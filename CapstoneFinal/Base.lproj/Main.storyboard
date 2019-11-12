@@ -1078,7 +1078,7 @@
         <!--Signup Login View Controller-->
         <scene sceneID="0pt-4G-6DM">
             <objects>
-                <viewController id="IAD-4B-XgI" customClass="SignupLoginViewController" customModule="CapstoneFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpLogin" id="IAD-4B-XgI" customClass="SignupLoginViewController" customModule="CapstoneFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Enm-8o-bDV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1509,6 +1509,14 @@
                                 <state key="normal" title="Delete"/>
                                 <connections>
                                     <action selector="d1:" destination="I84-rf-DGI" eventType="touchUpInside" id="rlt-zl-fBH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS8-C7-663">
+                                <rect key="frame" x="338" y="58" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="I84-rf-DGI" eventType="touchUpInside" id="JsH-kI-eo8"/>
                                 </connections>
                             </button>
                         </subviews>

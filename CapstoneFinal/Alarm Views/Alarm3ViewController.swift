@@ -13,8 +13,13 @@ import FirebaseDatabase
 
 class Alarm3ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //Creating Utilities Reference
     let util = Utilities()
+    
+    //Creating database reference
     let db = Firestore.firestore()
+    
+    //Variable to hold url
     var url : String = ""
 
     override func viewDidLoad() {
@@ -25,60 +30,29 @@ class Alarm3ViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     }
     
-
+    //Declaring Outlets
     @IBOutlet weak var MedName: UITextField!
-    
     @IBOutlet weak var AmountMed: UITextField!
-    
     @IBOutlet weak var myImg: UIImageView!
-    
     @IBOutlet weak var datePicker: UIDatePicker!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
+    //Action when Add Photo button is tapped
     @IBAction func addPic(_ sender: Any) {
     
         add()
     
     }
     
-       func add(){
-               if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
-               let imagePicker = UIImagePickerController()
-               imagePicker.delegate = self
-               imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-               imagePicker.allowsEditing = true
-               self.present(imagePicker, animated: true, completion: nil)
-              
-           }
-           
-       }
-       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-         
-           
-           if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-              myImg.contentMode = .scaleToFill
-              myImg.image = pickedImage
-               if let image = myImg.image{
-                   if let data = image.pngData() {
-                       let filename = self.util.getDocumentsDirectory().appendingPathComponent("copy.png")
-                       url = filename.absoluteString
-                       
-                       try? data.write(to: filename)
-                   }
-               }       }
-           picker.dismiss(animated: true, completion: nil)
-
-       }
-    
-
+    //Action when Set button is tapped
     @IBAction func SetButtonTapped(_ sender: Any) {
         
+        //Sends data to firebase if all fields are filled in, else shows error message to user
         if (MedName.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && AmountMed.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && myImg.image != nil){
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = .short
             let strDate = dateFormatter.string(from: datePicker.date)
-            //util.scheduleNotification(_fireDate: strDate ,_med: MedName.text!,_amount: AmountMed.text!)
+            
             
            
             db.collection("users").document(Auth.auth().currentUser!.uid).collection("Alarm 3").document("Alarm 3 Info").setData(["Medication": MedName.text!, "Amount": AmountMed.text!, "Set Date": strDate, "URL": url])
@@ -92,6 +66,7 @@ class Alarm3ViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         }
     
+    //Action when cancel button is tapped
     @IBAction func CancelButtonTapped(_ sender: Any) {
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
         
@@ -99,6 +74,38 @@ class Alarm3ViewController: UIViewController, UIImagePickerControllerDelegate, U
         view.window?.makeKeyAndVisible()
     }
     
-    }
+    //Function to add selected image to UIImageView
+          func add(){
+                  if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+                  let imagePicker = UIImagePickerController()
+                  imagePicker.delegate = self
+                  imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+                  imagePicker.allowsEditing = true
+                  self.present(imagePicker, animated: true, completion: nil)
+                 
+              }
+              
+          }
+       
+          //Converting UImage to URl and saving locally
+          func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+              
+              if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+                 myImg.contentMode = .scaleToFill
+                 myImg.image = pickedImage
+                  if let image = myImg.image{
+                      if let data = image.pngData() {
+                          let filename = self.util.getDocumentsDirectory().appendingPathComponent("copy.png")
+                          url = filename.absoluteString
+                          
+                          try? data.write(to: filename)
+                      }
+                  }       }
+              picker.dismiss(animated: true, completion: nil)
+
+          }
+    
+}
     
 
